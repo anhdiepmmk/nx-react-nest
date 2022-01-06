@@ -1,0 +1,29 @@
+version: '3'
+services:
+  alice:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: 'alice'
+    ports:
+      - '9001:8080'
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - omg
+  bob:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: 'bob'
+    ports:
+      - '9002:4200'
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - omg
+networks:
+  omg:
+    driver: bridge

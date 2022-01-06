@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "alice": "apps/alice",
+    "bob": "apps/bob"
+  }
+}
